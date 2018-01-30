@@ -2,13 +2,14 @@
 #define EMPLOYEECLASS_H_
 
 #include <iostream>
+#include <iomanip>
 #include "dateClass.h"
 
 class Employee {
 	std::string name;
 	int age;
 	char gender;
-	double ID;
+	long ID;
 	std::string phoneNumber;
 	std::string jobTitle;
 	double salary;
@@ -17,23 +18,25 @@ public:
 	/* Default constructor */
 	Employee();
 	/* Constructor w/ parameters */
-	Employee(std::string, int, char, double, std::string, std::string, double);
+	Employee(std::string, int, char, long, std::string, std::string, double);
 	/* Mutator Functions */
-	void setName(std::string);
-	void setAge(int);
-	void setGender(char);
-	void setID(double);
-	void setPhoneNumber(std::string);
-	void setJobTitle(std::string);
-	void setSalary(double);
+	void setName();
+	void setAge();
+	void setGender();
+	void setID();
+	void setPhoneNumber();
+	void setJobTitle();
+	void setSalary();
+	void setDate();
 	/* Accessor Functions */
 	std::string getName() const;
 	int getAge() const;
 	char getGender() const;
-	double getID() const;
+	long getID() const;
 	std::string getPhoneNumber() const;
 	std::string getJobTitle() const;
 	double getSalary() const;
+	void print() const;
 };
 
 #endif /* EMPLOYEECLASS_H_ */

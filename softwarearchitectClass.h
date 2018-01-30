@@ -12,18 +12,18 @@ public:
 	/* Default constructor */
 	SoftwareArchitect();
 	/* Constructor w/ parameters */
-	SoftwareArchitect(long, std::string, double, int,
-			          std::string, int, char, double, std::string, std::string, double);
+	SoftwareArchitect(std::string, int, char, long, std::string, std::string, double, long, std::string, double, int);
 	/* Mutator Functions */
-	void setDepartmentNumber(long);          // look into making these virtual as Programmer Class
-	void setSupervisorName(std::string);     // has these same functions that are not inherited
-	void setSalaryIncreasePercent(double);   // from Employee Class
-	void setExperienceYears(int);
+	void setDepartmentNumber();
+	void setSupervisorName();
+	void setSalaryIncreasePercent();
+	void setExperienceYears();
 	/* Accessor Functions */
-	long getDepartmentNumber() const;        // look into making these virtual as Programmer Class
-	std::string getSupervisorName() const;   // has these same functions that are not inherited
-	double getSalaryIncreasePercent() const; // from Employee Class
+	long getDepartmentNumber() const;
+	std::string getSupervisorName() const;
+	double getSalaryIncreasePercent() const;
 	int getExperienceYears() const;
+	void printAttributes() const;
 };
 
 #endif /* SOFTWAREARCHITECTCLASS_H_ */

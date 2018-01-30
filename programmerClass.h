@@ -13,20 +13,20 @@ public:
     /* Default constructor */
 	Programmer();
 	/* Constructor w/ parameters */
-	Programmer(long, std::string, double, bool, bool,
-			   std::string, int, char, double, std::string, std::string, double);
+	Programmer(std::string, int, char, long, std::string, std::string, double, long, std::string, double, bool, bool);
 	/* Mutator Functions */
-	void setDepartmentNumber(long);          // look into making these virtual as Software Class
-	void setSupervisorName(std::string);     // has these same functions that are not inherited
-	void setSalaryIncreasePercent(double);   // from Employee Class
-	void setKnowCpp(bool);
-	void setKnowJava(bool);
+	void setDepartmentNumber();
+	void setSupervisorName();
+	void setSalaryIncreasePercent();
+	void setKnowCpp();
+	void setKnowJava();
 	/* Accessor Functions */
-	long getDepartmentNumber() const;        // look into making these virtual as Software Class
-	std::string getSupervisorName() const;   // has these same functions that are not inherited
-	double getSalaryIncreasePercent() const; // from Employee Class
+	long getDepartmentNumber() const;
+	std::string getSupervisorName() const;
+	double getSalaryIncreasePercent() const;
 	bool getKnowCpp() const;
 	bool getKnowJava() const;
+	void printAttributes() const;
 };
 
 #endif /* PROGRAMMERCLASS_H_ */

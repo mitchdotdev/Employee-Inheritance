@@ -12,11 +12,11 @@ Employee::Employee() {
 }
 
 /* Constructor w/ parameters */
-Employee::Employee(std::string nme, int ag, char gen, double id,
+Employee::Employee(std::string nme, int ag, char gen, long id,
 			       std::string phoneNum, std::string jobTtle, double slry) {
 	name = nme;
 
-	(age > 0) ? age = ag : age = 0;
+	(ag > 0) ? age = ag : age = 0;
 
 	if(gen == 'M' || gen == 'm' ||
 	   gen == 'F' || gen == 'f')
@@ -35,11 +35,20 @@ Employee::Employee(std::string nme, int ag, char gen, double id,
 }
 
 /* Mutator Functions */
-void Employee::setName(std::string nme) {
+void Employee::setName() {
+	std::string nme;
+	std::cout << "\nEnter Name: ";
+	std::getline(std::cin, nme);
+
 	name = nme;
 }
 
-void Employee::setAge(int ag) {
+void Employee::setAge() {
+	int ag;
+	std::cout << "\nEnter Age: ";
+	std::cin  >> ag;
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
 	if(ag > 0) {
 		age = ag;
 	} else {
@@ -47,7 +56,12 @@ void Employee::setAge(int ag) {
 	}
 }
 
-void Employee::setGender(char gen) {
+void Employee::setGender() {
+	char gen;
+	std::cout << "\nEnter Gender: ";
+	std::cin.get(gen);
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
 	if(gen == 'M' || gen == 'm' ||
 	   gen == 'F' || gen == 'f')
 		gender = gen;
@@ -55,7 +69,12 @@ void Employee::setGender(char gen) {
 		std::cout << "\nINVALID GENDER ENTRY . . . GENDER NOT SET\n";
 }
 
-void Employee::setID(double id) {
+void Employee::setID() {
+	long id;
+	std::cout << "\nEnter Employee ID: ";
+	std::cin  >> id;
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
 	if(id > 0) {
 		ID = id;
 	} else {
@@ -63,18 +82,53 @@ void Employee::setID(double id) {
 	}
 }
 
-void Employee::setPhoneNumber(std::string phoneNum) {
+void Employee::setPhoneNumber() {
+	std::string phoneNum;
+	std::cout << "\nEnter Phone Number: ";
+	std::getline(std::cin, phoneNum);
 	phoneNumber = phoneNum;
 }
 
-void Employee::setJobTitle(std::string jobTtle) {
+void Employee::setJobTitle() {
+	std::string jobTtle;
+	std::cout << "\nEnter Job Title: ";
+	std::getline(std::cin, jobTtle);
 	jobTitle = jobTtle;
 }
 
-void Employee::setSalary(double slry) {
+void Employee::setSalary() {
+	double slry;
+	std::cout << "\nEnter Salary: ";
+	std::cin  >> slry;
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
 	(slry > 0) ? salary = slry : salary = 0.00;
 }
 
+void Employee::setDate() {
+	int mnth, dy, yr;
+	std::cout << "\nEnter Month hired: ";
+	std::cin  >> mnth;
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
+	std::cout << "\nEnter Day hired: ";
+	std::cin  >> dy;
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
+	std::cout << "\nEnter Year hired: ";
+	std::cin  >> yr;
+	std::cin.clear();
+	std::cin.ignore(100, '\n');
+
+	if(mnth > 0 && dy > 0 && yr > 0)
+	{
+		hireDate.setMonth(mnth);
+		hireDate.setDay(dy);
+		hireDate.setYear(yr);
+	} else {
+		std::cout << "\nINVALID DATE ENTRY . . . DATE NOT SET\n";
+	}
+}
 /* Accessor Functions */
 std::string Employee::getName() const {
 	return name;
@@ -88,7 +142,7 @@ char Employee::getGender() const {
 	return gender;
 }
 
-double Employee::getID() const {
+long Employee::getID() const {
 	return ID;
 }
 
@@ -102,4 +156,16 @@ std::string Employee::getJobTitle() const {
 
 double Employee::getSalary() const {
 	return salary;
+}
+
+void Employee::print() const {
+	std::cout << "\n\nName: " << getName()
+			  << "\nEmployee ID: " << getID()
+			  << "\nPhone: " << getPhoneNumber()
+			  << "\nAge: " << getAge()
+			  << "\nGender: " << getGender()
+			  << "\nJob Title: " << getJobTitle()
+			  << "\nSalary: $" << std::setprecision(2) << std::fixed << getSalary()
+			  << "\nHire Date: " << hireDate.getMonth() << '/' << hireDate.getDay() << '/' << hireDate.getYear()
+			  << "\n\n";
 }

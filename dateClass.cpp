@@ -20,17 +20,17 @@ Date::Date(int mnth, int dy, int yr) {
 }
 
 /* Mutator Function */
-void Date::setDate(int mnth, int dy, int yr) {
-	if(mnth > 0 && dy > 0 && yr > 0)
-	{
-		month = mnth;
-		day = dy;
-		year = yr;
-	} else {
-		std::cout << "\nINVALID DATE ENTRY . . . DATE NOT SET\n";
-	}
+void Date::setMonth(int mnth) {
+	month = mnth;
 }
 
+void Date::setDay(int dy) {
+	day = dy;
+}
+
+void Date::setYear(int yr) {
+	year = yr;
+}
 /* Accessor Functions */
 int Date::getMonth() const {
 	return month;

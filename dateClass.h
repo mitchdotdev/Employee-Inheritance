@@ -2,7 +2,7 @@
 #define DATECLASS_H_
 
 #include <iostream>
-
+#include <list>
 class Date {
 	int month;
 	int day;
@@ -13,7 +13,9 @@ public:
 	/* Constructor w/ parameters */
 	Date(int, int, int);
 	/* Mutator Function */
-	void setDate(int, int, int);
+	void setMonth(int);
+	void setDay(int);
+	void setYear(int);
 	/* Accessor Functions */
 	int getMonth() const;
 	int getDay() const;
