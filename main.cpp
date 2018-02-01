@@ -11,16 +11,13 @@ int main() {
 	int add, edit;
 
 	std::deque<Employee> employeeDeque;
-	Employee csEmployee("Tom Brady", 40, 'M', 12345, "(949) 555-1234", "Quarterback", 100000);
-	employeeDeque.push_back( csEmployee );
+	Employee employee;
 
 	std::deque<Programmer> programmerDeque;
-	Programmer programmer("Sam Software", 21, 'M', 54321, "(819) 123-4567", "Programmer", 223000, 5432122, "Joe Boss", 4, true, false);
-	programmerDeque.push_back( programmer );
+	Programmer programmer;
 
 	std::deque<SoftwareArchitect> softwareArchitectDeque;
-	SoftwareArchitect architect("Alex Arch", 31, 'M', 88888, "(819) 123-4444", "Architect", 323000, 5434222, "Big Boss", 5, 4);
-	softwareArchitectDeque.push_back( architect );
+	SoftwareArchitect architect;
 
 	while(!exit)
 	{
@@ -28,21 +25,21 @@ int main() {
 		edit = 1;
 		switch( welcome() )
 		{
-			case 1: // CS1C Employee
+			case 1: // Employee
 				if( (add = addOrEdit()) == 1 )
 				{
 					while(add == 1)
 					{
-						csEmployee.setName();
-						csEmployee.setAge();
-						csEmployee.setGender();
-						csEmployee.setID();
-						csEmployee.setPhoneNumber();
-						csEmployee.setJobTitle();
-						csEmployee.setSalary();
-						csEmployee.setDate();
+						employee.setName();
+						employee.setAge();
+						employee.setGender();
+						employee.setID();
+						employee.setPhoneNumber();
+						employee.setJobTitle();
+						employee.setSalary();
+						employee.setDate();
 
-						employeeDeque.push_back( csEmployee );
+						employeeDeque.push_back( employee );
 
 						std::cout << "\nWould you like to add another new employee?\n"
 									 "[ 1 ] Yes\n"
